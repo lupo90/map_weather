@@ -58,8 +58,8 @@ function updateMap(lat, lon, city) {
 
 // Funzione per ottenere i dati meteo
 function fetchWeather(lat, lon, city) {
-    var key = "c10b86631ad7400dc4ed3982eebd35ac";
-    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
+    var _key = "c10b86631ad7400dc4ed3982eebd35ac";
+    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${_key}&units=metric`;
 
     fetch(url)
         .then(response => {
