@@ -6,22 +6,41 @@
     <title>Franosità Regione Abruzzo</title>
     <link rel="stylesheet" href="https://unpkg.com/ol@latest/ol.css">
     <script src="https://unpkg.com/ol@latest/dist/ol.js"></script>
-    <link rel="shortcut icon" type="image/png" href="./icons8-lupo-64.png">
-    <style>
-    #map {
-    width: 100%;
-    height: 900px;
-    }
-    #head{
-        color: cornflowerblue;
-
-    }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 id="head">Franosità Regione Abruzzo</h2>
-    <div id="map"></div>
+    <div id="ribbon">Mappa dei fenomeni franosi Regione Abruzzo</div>
+    <!-- Widget di ricerca -->
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Cerca una via...">
+        <button id="search-button">Cerca</button>
+    </div>
+    <!-- mappa -->
+    <div id="map">
+        
+        <!-- Widget info frane -->
+        <div id="widget_info", draggable="true"></div>
+        <div id="legend">
+            <strong>Legenda</strong><br>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(215, 17, 17, 0.66);"></div>
+                <div class="legend-text">Scivolamento rotazionale/traslativo</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 50, 50, 0.7);"></div>
+                <div class="legend-text">Complesso</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 100, 100, 0.6);"></div>
+                <div class="legend-text">Colamento lento</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(147, 62, 204, 0.4);"></div>
+                <div class="legend-text">Colamento Rapido</div>
+            </div>
+        </div>
+    </div>
+    <!-- file principale JavaScript -->
     <script src="main.js"></script>
     </script>
 </body>

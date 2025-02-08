@@ -1,0 +1,90 @@
+#map {
+    width: 100%;
+    height: 850px;
+    position: absolute;
+    top: 60px; /* Assicura che la mappa non sia coperta dalla ribbon */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#head{
+    position: relative;
+    color: black;
+}
+#ribbon {
+    background-color: rgba(11, 168, 58, 0.61);
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 17px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+#widget_info {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(253, 254, 255, 0.7);
+    border: 1px solid black;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    font-size: 17px;
+    z-index: 1500; /* Aggiunto per stare sopra la mappa */;
+    border-radius: 10px; /* Smussa gli spigoli */
+}
+#legend {
+    position: fixed;
+    top: 700px;
+    right: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    border-radius: 8px;
+    z-index: 1500;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.legend-color {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.legend-text {
+    font-size: 17px;
+    color: black;
+}
+
+#search-container {
+    position: fixed;
+    top: 65px;
+    left: 40px;
+    z-index: 1500;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#search-input {
+    padding: 5px;
+    width: 200px;
+}
+
+#search-button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
