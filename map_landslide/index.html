@@ -5,44 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franosità Regione Abruzzo</title>
     <link rel="stylesheet" href="https://unpkg.com/ol@latest/ol.css">
+    <script type="module" src=https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js></script>
+    <link rel="stylesheet" type="text/css" href=https://js.arcgis.com/calcite-components/2.13.2/calcite.css />
     <script src="https://unpkg.com/ol@latest/dist/ol.js"></script>
-    <link rel="icon" type="image/png" href="icons8-lupo-64.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="ribbon">Mappa dei fenomeni franosi Regione Abruzzo</div>
-    <!-- Widget di ricerca -->
-    <div id="search-container">
-        <input type="text" id="search-input" placeholder="Cerca una via...">
-        <button id="search-button">Cerca</button>
-    </div>
-    <!-- mappa -->
-    <div id="map">
-        
-        <!-- Widget info frane -->
-        <div id="widget_info", draggable="true"></div>
-        <div id="legend">
-            <strong>Legenda</strong><br>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: rgba(215, 17, 17, 0.66);"></div>
-                <div class="legend-text">Scivolamento rotazionale/traslativo</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: rgba(255, 50, 50, 0.7);"></div>
-                <div class="legend-text">Complesso</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: rgba(255, 100, 100, 0.6);"></div>
-                <div class="legend-text">Colamento lento</div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: rgba(147, 62, 204, 0.4);"></div>
-                <div class="legend-text">Colamento Rapido</div>
-            </div>
-        </div>
-    </div>
+    <calcite-shell content-behind>
+        <!-- Mappa -->
+        <div id="map"></div>
+
+        <!-- Pannello laterale con info frane e legenda -->
+        <calcite-shell-panel slot="panel-start" width-scale="m" resizable=ture>
+            <calcite-panel heading="Pannello Informativo">
+                <calcite-accordion>
+                    <!-- Sezione Info Frane che si apre al click -->
+                    <calcite-accordion-item heading="Ricerca">
+                        <calcite-input id="calcite-input" placeholder="Ricerca indirizzo"></calcite-input>
+                        <calcite-button id="calcite-button"> Cerca </calcite-button>
+                        
+                    </calcite-accordion-item>
+
+                    <!-- Sezione Info Frane che si apre al click -->
+                    <calcite-accordion-item heading="Anagrafica Frane">
+                        <div id="widget_info">Seleziona una frana in mappa...</div>
+                    </calcite-accordion-item>
+
+                    <!-- Sezione Legenda -->
+                    <calcite-accordion-item heading="Legenda">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(215, 17, 17, 0.66);"></div>
+                            <div class="legend-text">Scivolamento rotazionale/traslativo</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(255, 50, 50, 0.7);"></div>
+                            <div class="legend-text">Complesso</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(255, 100, 100, 0.6);"></div>
+                            <div class="legend-text">Colamento lento</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(147, 62, 204, 0.4);"></div>
+                            <div class="legend-text">Colamento rapido</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(17, 175, 215, 0.66);"></div>
+                            <div class="legend-text">Aree con sprofondamenti diffusi</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(195, 215, 17, 0.66);"></div>
+                            <div class="legend-text">Aree con frane superficiali diffuse</div>
+                        </div>
+                    </calcite-accordion-item>
+                </calcite-accordion>
+            </calcite-panel>
+        </calcite-shell-panel>
+    
+
+    </calcite-shell>
+    
     <!-- file principale JavaScript -->
     <script src="main.js"></script>
-    </script>
 </body>
 </html>
